@@ -1,28 +1,21 @@
 # belly-button-challenge
-// Place url in a constant variable
+
 const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json"
 
-// Fetch the JSON data
 d3.json(url).then(function(data) {
   console.log(data);
 });
 
-// Initialize the dashboard at start up 
 function init() {
 
-    // Use D3 to select the dropdown menu
     let dropdownMenu = d3.select("#selDataset");
 
-    // Use D3 to get sample names and populate the drop-down selector
     d3.json(url).then((data) => {
         
-        // Set a variable for the sample names
         let names = data.names;
-
-        // Add samples to dropdown menu
+        
         names.forEach((id) => {
 
-            // Log the value of id 
             console.log(id);
 
             dropdownMenu.append("option")
